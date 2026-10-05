@@ -1,23 +1,15 @@
 # Windows-Server-2022-ActiveDirectory-Lab
 Hands-on Enterprise IT Helpdesk Lab built with Oracle VirtualBox, Windows Server 2022, Active Directory Domain Services, and Windows 11. Demonstrates 1st Line Service Desk ticket troubleshooting, user onboarding, and GPO administration.
 
-<details>
-<summary><b>📋 Table of Contents (Click to Expand)</b></summary>
-
-* [Overview &amp; Prerequisites](#overview--prerequisites)
-* [Part 1: Environment &amp; Windows Server 2022 Installation](#part-1-environment--windows-server-2022-installation)
-  * [1. Software Downloads](#1-software-downloads)
-  * [2. Virtual Machine Allocation](#2-virtual-machine-allocation)
-  * [3. Windows Server 2022 OS Deployment](#3-windows-server-2022-os-deployment)
-  * [4. Post-Installation Configuration &amp; Verification](#4-post-installation-configuration--verification)
-* [Part 2: (Upcoming)](#part-2-upcoming)
-
-</details>
+## 📋 Table of Contents
+* [Overview & Prerequisites](#overview--prerequisites)
+* [Part 1: Environment & Windows Server 2022 Installation](#part-1-environment--windows-server-2022-installation)
+* [Part 2: Active Directory & Domain Controller Setup (Upcoming)](#part-2-upcoming)
 
 ---
 
-## 📌 Overview &amp; Prerequisites
-This project documents a hands-on IT Helpdesk practice lab modeled after enterprise infrastructure [1, 4]. It demonstrates foundational 1st Line Service Desk capabilities—including OS deployment, Active Directory administration, user onboarding, and endpoint troubleshooting.
+## 📌 Overview & Prerequisites
+This project documents a hands-on IT Helpdesk practice lab modeled after enterprise infrastructure. It demonstrates foundational 1st Line Service Desk capabilities—including OS deployment, Active Directory administration, user onboarding, and endpoint troubleshooting.
 
 ### Core Technologies
 * **Hypervisor:** Oracle VirtualBox (v7.1.4) 
@@ -26,7 +18,10 @@ This project documents a hands-on IT Helpdesk practice lab modeled after enterpr
 
 ---
 
-## 🛠️ Part 1: Environment &amp; Windows Server 2022 Installation
+<details>
+<summary><b>🛠️ Part 1: Environment & Windows Server 2022 Installation (Click to Expand)</b></summary>
+
+<br>
 
 ### 1. Software Downloads
 1. Downloaded and installed **Oracle VirtualBox 7.1.4**.
@@ -34,6 +29,7 @@ This project documents a hands-on IT Helpdesk practice lab modeled after enterpr
 3. Generated the **Windows 11 ISO** using the Windows 11 Media Creation Tool (`Create ISO file` option).
 
 ![Software Downloads](server_2022_images/downloads.png)
+
 ---
 
 ### 2. Virtual Machine Allocation
@@ -61,10 +57,10 @@ This project documents a hands-on IT Helpdesk practice lab modeled after enterpr
 
 ---
 
-### 4. Post-Installation Configuration &amp; Verification
+### 4. Post-Installation Configuration & Verification
 1. Configured the primary local **Administrator account password** and signed in via `Ctrl + Alt + Delete`.
 2. Opened **Server Manager** and updated the system **Time Zone** from Pacific Time to local Eastern Time.
-3. Adjusted VirtualBox display scaling under `Virtual Screen 1 -&gt; 125%` for optimal screen visibility.
+3. Adjusted VirtualBox display scaling under `Virtual Screen 1 -> 125%` for optimal screen visibility.
 4. Tested administrative Command Prompt CLI utilities for remote system management:
    * `shutdown /i` — Opened the Graphical Remote Shutdown interface
    * `shutdown /s` — Standard full system shutdown
@@ -73,6 +69,16 @@ This project documents a hands-on IT Helpdesk practice lab modeled after enterpr
 
 ![Command Line](server_2022_images/shutdown.png)
 ![Shutdown Confirmation](server_2022_images/shutdown_confirmed.png)
+
+</details>
+
 ---
 
-## 🎯 Part 2:
+<details>
+<summary><b>🎯 Part 2: (Upcoming)</b></summary>
+
+<br>
+
+* Upcoming
+
+</details>

@@ -33,8 +33,7 @@ This project documents a hands-on IT Helpdesk practice lab modeled after enterpr
 2. Acquired the **Windows Server 2022 64-bit ISO** evaluation file from Microsoft.
 3. Generated the **Windows 11 ISO** using the Windows 11 Media Creation Tool (`Create ISO file` option).
 
-![Software Downloads](images/01-software-downloads.png)
-
+![Software Downloads](server_2022_images/downloads.png)
 ---
 
 ### 2. Virtual Machine Allocation
@@ -47,7 +46,7 @@ This project documents a hands-on IT Helpdesk practice lab modeled after enterpr
    * **Processors:** 2 vCPUs 
    * **Storage:** Created standard virtual disk image
 
-![Virtual Machine Setup](images/02-vm-settings.png)
+![Virtual Machine Setup](server_2022_images/setup.png)
 
 ---
 
@@ -57,7 +56,8 @@ This project documents a hands-on IT Helpdesk practice lab modeled after enterpr
 3. Performed custom installation and allowed the OS installer to copy files and finish updates.
 4. Following the system reboot, removed/unmounted the ISO installation disk from the virtual drive.
 
-![Desktop Experience Selection](images/03-desktop-experience.png)
+![ISO Selection](server_2022_images/version_install.png)
+![Windows Desktop Experience](server_2022_images/winver.png)
 
 ---
 
@@ -71,8 +71,8 @@ This project documents a hands-on IT Helpdesk practice lab modeled after enterpr
    * `shutdown /r` — Full system reboot
    * `shutdown /?` — Displayed full command parameter list
 
-![Completed Server Setup](images/04-server-desktop.png)
-
+![Command Line](server_2022_images/shutdown.png)
+![Shutdown Confirmation](server_2022_images/shutdown_confirmed.png)
 ---
 
 ## 🎯 Part 2:

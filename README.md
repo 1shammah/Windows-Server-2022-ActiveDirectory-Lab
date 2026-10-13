@@ -75,10 +75,52 @@ This project documents a hands-on IT Helpdesk practice lab modeled after enterpr
 ---
 
 <details>
-<summary><b>🎯 Part 2: (Upcoming)</b></summary>
+<summary><b>🎯 Part 2: Active Directory Domain Services (AD DS) & Domain Controller Setup (Click to Expand)</b></summary>
 
 <br>
 
-* Upcoming
+### 1. Hostname Customization & Server Reboot
+1. Signed into Windows Server 2022 as the local Administrator.
+2. Opened **Server Manager -> Local Server** and selected the default generated computer name (e.g., `WIN-0907...`).
+3. Renamed the computer to **`MYDC-01`** (representing Domain Controller 01 in New York) to align with enterprise naming standards.
+4. Restarted the virtual machine to apply the new system hostname.
+
+![Server Rename](server_2022_images/05-rename-server.png)
+
+---
+
+### 2. Active Directory Domain Services (AD DS) Role Installation
+1. Opened **Server Manager**, selected **Manage -> Add Roles and Features**.
+2. Selected **Role-based or feature-based installation** and designated `MYDC-01` as the destination server.
+3. Selected **Active Directory Domain Services (AD DS)** and accepted all required default dependency features.
+4. Completed the role installation wizard.
+
+![AD DS Role Installation](server_2022_images/06-add-ad-ds-role.png)
+
+---
+
+### 3. Domain Controller Promotion (PowerShell Scripting Method)
+1. Selected the **Notification flag** in Server Manager and clicked **Promote this server to a domain controller**.
+2. Selected Deployment Operation: **Add a new forest** and set the Root Domain Name to **`kevtech.com`**.
+3. Set the Directory Services Restore Mode (DSRM) password.
+4. On the review screen, clicked **View Script** to export the automatically generated deployment script.
+5. Closed the wizard, launched **PowerShell (Run as Administrator)**, pasted the script, entered the Safe Mode password, and executed the automated CLI deployment.
+6. Allowed the system to complete the promotion process and perform an automatic reboot .
+
+![PowerShell AD DS Deployment Script](server_2022_images/07-powershell-promotion.png)
+
+---
+
+### 4. Post-Promotion & Active Directory Verification
+1. Signed into the newly established domain as **`KEVTECH\Administrator`** .
+2. Executed Command Prompt CLI utilities to verify domain controller status and domain health:
+   * `whoami` — Confirmed current domain admin identity (`KEVTECH\Administrator`)
+   * `hostname` — Verified server hostname (`MYDC-01`)
+   * `systeminfo` — Verified Domain (`kevtech.com`), OS edition, and network parameters
+   * `net user administrator /domain` — Queried domain user account parameters directly from Active Directory
+3. Opened **Server Manager -> Tools -> Active Directory Users and Computers (ADUC)** to confirm AD administration tools are operational.
+
+![Active Directory Verification CLI](server_2022_images/08-verify-ad-cli.png)
+![Active Directory Users and Computers GUI](server_2022_images/09-aduc-verification.png)
 
 </details>

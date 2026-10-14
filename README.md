@@ -4,7 +4,9 @@ Hands-on Enterprise IT Helpdesk Lab built with Oracle VirtualBox, Windows Server
 ## 📋 Table of Contents
 * [Overview & Prerequisites](#overview--prerequisites)
 * [Part 1: Environment & Windows Server 2022 Installation](#part-1-environment--windows-server-2022-installation)
-* [Part 2: Active Directory & Domain Controller Setup (Upcoming)](#part-2-upcoming)
+* [Part 2: Active Directory & Domain Controller Setup](#part-2-active-directory-and-domain-controller-setup)
+* [Part 3: VirtualBox Guest Additions, User Onboarding & Active Directory Administration (upcoming)](#part-3-guest-and-user-onboarding)
+ 
 
 ---
 

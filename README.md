@@ -128,3 +128,58 @@ This project documents a hands-on IT Helpdesk practice lab modeled after enterpr
 ![Active Directory Users and Computers GUI](server_2022_images/aduc-verification.png)
 
 </details>
+
+---
+
+<details>
+<summary><b>🛠️ Part 3: VirtualBox Guest Additions, User Onboarding & Active Directory Administration (Click to Expand)</b></summary>
+
+<br>
+
+### 1. VirtualBox Guest Additions & Shared Folder Integration
+1. Booted Windows Server 2022 VM and logged in as `SHAMMAHDUBE\Administrator`.
+2. From the VirtualBox menu bar, navigated to **Devices -> Insert Guest Additions CD image...**.
+3. Opened **File Explorer -> This PC**, opened the mounted Guest Additions optical drive, and executed `VBoxWindowsAdditions.exe`.
+4. Followed the setup wizard (`Next -> Next -> Install`) and rebooted the server to apply driver enhancements.
+5. Configured host-to-guest file sharing in VirtualBox settings (**VM Settings -> Shared Folders**):
+   * Added a host folder mapping named `helpdesklab`.
+   * Selected **Auto-mount** and **Make Permanent**.
+6. Verified two-way clipboard/file transfers by copying files from the host machine directly into the VM shared folder.
+
+![VirtualBox Guest Additions Setup](server_2022_images/guest-additions-install.png)
+![Shared Folder Configuration](server_2022_images/shared-folder-setup.png)
+![Shared Folder File Explorer](server_2022_images/shared-folder-file-explorer.png)
+
+---
+
+### 2. Active Directory User Account Provisioning
+1. Launched **Server Manager -> Tools -> Active Directory Users and Computers (ADUC)**.
+2. Expanded the domain tree (`[suspicious link removed]`) and navigated to the **Users** container.
+3. Provisioned new domain user accounts via **New -> User** wizard:
+   * **User 1:** First Name: `Keith`, User logon name: `keith`
+   * **User 2:** First Name: `Shammah`, User logon name: `shammah`
+4. Configured initial passwords and completed account creation.
+
+---
+
+### 3. Service Desk User Administration & Account Management
+Executed core 1st Line IT Support account management tasks directly within ADUC:
+* **User Attribute Updates:** Double-clicked user (`Keith`) to update organizational properties including address, country/region (United States), telephone number, job title, department, company, and reporting manager.
+* **Password Reset:** Right-clicked user -> selected **Reset Password** to simulate user password recovery requests.
+* **Disabling / Enabling Accounts:** Right-clicked user -> selected **Disable Account** (verifying downward arrow overlay icon) and **Enable Account**.
+* **Account Unlock:** Double-clicked user -> **Account** tab -> checked **Unlock account** to resolve user account lockouts.
+* **Logon Hours Enforcement:** Opened **Account -> Logon Hours** to configure permitted login windows (e.g., restricting access outside business hours).
+
+![Active Directory User Properties & Management](server_2022_images/user-properties-management.png)
+
+---
+
+### 4. Command Line (CLI) User Account Verification
+1. Opened **Command Prompt** (`cmd.exe`).
+2. Executed Active Directory CLI queries to inspect domain user account parameters:
+   * `net user mark /domain` — Queried domain user account status, password expiration timestamps, account active state, and assigned group memberships.
+   * `net user kevin /domain` — Verified second newly created domain user account directly against AD.
+
+![Net User CLI Verification](server_2022_images/net-user-cli-verification.png)
+
+</details>
